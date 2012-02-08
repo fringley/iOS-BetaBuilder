@@ -11,8 +11,8 @@
                     font-size:16px;
                 }
                 body, a {
-                    color:#503F66;
-                    text-decoration:none;
+                    color: #503F66;
+                    text-decoration: none;
                 }
                 #container {
                     width:280px;
@@ -22,28 +22,40 @@
                     margin: 20px auto;
                     width: 200px;
                 }
-                p {font-size:13px;}
-                .link {
-                    text-align: left;
-                    background:#120D18;
-                    border:1px solid #503F66;
-                    text-align: left;
-                    position: relative;
-                    min-height: 57px;
+                p {
+                    font-size: 13px;
+                    text-shadow: #000 0px 0px 10px;
                 }
-                .link img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 57px;
-                    width: 57px;
+                a.download {
                     display: block;
-                }
-                .link a {
+                    background-image: -webkit-gradient(
+                      linear,
+                      left bottom,
+                      left top,
+                      color-stop(0.12, rgb(32,25,41)),
+                      color-stop(0.56, rgb(0,0,0)));
+                    background-image: -moz-linear-gradient(
+                      center bottom,
+                      rgb(32,25,41) 12%,
+                      rgb(0,0,0) 56%
+                    );
+                    text-shadow: #79898F 0px 0px 50px;
+                    border: 1px solid #503F66;
                     font-size: 15px;
                     display: block;
                     color: #fff;
-                    margin: 0.7em 0.5em auto 75px;
+                    margin: 0.7em auto;
+                    padding: 20px 10px 19px 57px;
+                    position: relative;
+                    border-radius: 4px;
+                }
+                a.download img {
+                    height: 57px;
+                    width: 57px;
+                    position: absolute;
+                    left: 10px;
+                    top: 10px;
+                    border-radius: 8px;
                 }
                 .additional_info {
                     font-size: 0.6em;
@@ -51,29 +63,30 @@
                     font-style: italic;
                 }
                 </style>
-    </head>
-    <body>
+            </head>
+    <body>        
         
         <div id="container">
             
             <img src="http://conjure.co.uk/ota/ota-logo.png" class="conjure">
                 
-                <div class="link">
-                    [BETA_ICON]
-                    <a href="itms-services://?action=download-manifest&url=[BETA_PLIST]">Tap Here to Install<br />[BETA_NAME] [BETA_VERSION]</a>
-                </div>
-                
-                <p>
-                    <strong>Link didn't work?</strong><br />
-                    Make sure you're visiting this page on<br />your iOS device and not your computer.
-                </p>
-                
-                <p class="additional_info">
-                    Last Updated: [BETA_DATE]<br />
-                    <a href="http://www.hanchorllc.com/category/ios-betabuilder/">Created With BetaBuilder for iOS Apps</a>
-                </p>
-                
+            <a href="itms-services://?action=download-manifest&url=[BETA_PLIST]" class="download">
+                [BETA_ICON]                        
+                Tap Here to Install<br />[BETA_NAME] [BETA_VERSION]
+            </a>
+            
+            <p>
+                <strong>Link didn't work?</strong><br />
+                Make sure you're visiting this page on<br />your iOS device and not your computer.
+            </p>
+            
+            <p class="additional_info">
+                Last Updated: [BETA_DATE]<br />
+                <a href="http://www.hanchorllc.com/category/ios-betabuilder/">Created With BetaBuilder for iOS Apps</a>
+            </p>
+            
         </div>
         
     </body>
 </html>
+
